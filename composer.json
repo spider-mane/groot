@@ -1,0 +1,39 @@
+{
+  "name": "webtheory/groot",
+  "description": "Starter theme for wordpress using Timber and more",
+  "type": "project",
+  "license": "MIT",
+  "authors": [{
+    "name": "Chris Williams",
+    "email": "spider.mane.web@gmail.com"
+  }],
+  "require": {
+    "composer/installers": "^1.7",
+    "giggsey/libphonenumber-for-php": "^8.10",
+    "joshtronic/php-loremipsum": "^1.0",
+    "symfony/asset": "^4.3",
+    "timber/timber": "^1.10",
+    "webtheory/guctilitybelt": "^0.2.3",
+    "webtheory/html": "^0.1.1",
+    "webtheory/leonidas": "^0.8.3",
+    "webtheory/voltaire": "^0.1.0"
+  },
+  "require-dev": {
+    "filp/whoops": "^2.4",
+    "symfony/var-dumper": "^4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Theme\\": "app"
+    }
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/{$vendor}/{$name}": ["type:wordpress-muplugin", "type:wordpress-plugin"]
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
