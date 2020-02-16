@@ -12,5 +12,7 @@ return [
     /**
      *
      */
-    'scripts' => ['nowpbs', 'enqueue', 'filters']
+    'scripts' => ['nowpbs', 'enqueue', 'filters'],
+
+    'providers' => [],
 ];

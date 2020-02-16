@@ -59,7 +59,7 @@ class ThemeData
      */
     public static function postType(string $postType)
     {
-        return static::get("map.post-types.{$postType}");
+        return static::get("map.post_types.{$postType}");
     }
 
     /**

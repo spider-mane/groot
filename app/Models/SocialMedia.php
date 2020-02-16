@@ -2,7 +2,7 @@
 
 namespace Theme\Models;
 
-use Theme\ContextView;
+use WebTheory\GuctilityBelt\ContextView;
 
 class SocialMedia
 {
@@ -40,7 +40,7 @@ class SocialMedia
     protected static function setContextView()
     {
         $accounts = static::getAccounts();
-        $contexts = ThemeData::get('social-media.contexts');
+        $contexts = ThemeData::get('social_media.contexts');
 
         static::$contextView = new ContextView($accounts, $contexts);
     }
@@ -60,11 +60,11 @@ class SocialMedia
      */
     public static function getAccounts()
     {
-        $accounts = ThemeData::get('social-media.accounts');
+        $accounts = ThemeData::get('social_media.accounts');
 
         foreach ($accounts as $account => &$data) {
 
-            $data['url'] = static::getLink($account) ?: $data['url'];
+            $data['url'] = static::getLink($account) ?: $data['url'] ?? '';
         }
 
         return $accounts;

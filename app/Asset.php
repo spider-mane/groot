@@ -1,6 +1,6 @@
 <?php
 
-namespace Theme\Models;
+namespace Theme;
 
 /**
  * @method static string audio(string $file)
@@ -33,6 +33,9 @@ class Asset
         'video' => 'videos',
     ];
 
+    /**
+     *
+     */
     protected const EXTENSIONS = [
         'script' => '.js',
         'stylesheet' => '.css',

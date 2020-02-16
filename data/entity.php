@@ -20,8 +20,8 @@ return [
     ],
 
     'contact' => [
-        'phone' => null,
-        'email' => null,
+        'phone' => '123-456-7890',
+        'email' => 'name@email.com',
     ],
 
     'fonts' => [

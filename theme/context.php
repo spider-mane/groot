@@ -1,6 +1,6 @@
 <?php
 
-use Theme\Models\Asset;
+use Theme\Asset;
 use Theme\Models\Entity;
 use Theme\Models\SocialMedia;
 use Theme\Models\ThemeData;
@@ -29,6 +29,8 @@ $default = $context;
  * add things
  */
 $context = [
+
+    'base' => get_view_slug(),
 
     'favicons' => [
         'default' => Asset::icon(ThemeData::favicon()),
@@ -68,11 +70,9 @@ $context = [
 
     'fonts' => ThemeData::get('assets.fonts'),
 
-    'base' => get_view_slug(),
-
     'meta' => [
-        'post' => ThemeData::get('map.post-meta'),
-        'term' => ThemeData::get('map.term-meta'),
+        'post' => ThemeData::get('map.post_meta'),
+        'term' => ThemeData::get('map.term_meta'),
     ],
 ];
 

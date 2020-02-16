@@ -22,4 +22,4 @@ TimberTwigConfig::set(theme_config('twig'));
 TimberContext::load(theme()->path('context.php'));
 
 # redirect template search
-TemplateRouter::set(theme()->routesPath());
+TemplateRouter::set('routes');

@@ -1,8 +1,9 @@
 <?php
 
-use Backalley\Form\FormFieldFactory;
 use Theme\Asset;
-use Theme\Classlist;
+use WebTheory\GuctilityBelt\Phone;
+use WebTheory\Html\Attributes\Classlist;
+use WebTheory\Saveyour\Factories\FormFieldFactory;
 use joshtronic\LoremIpsum;
 
 return [
@@ -18,8 +19,8 @@ return [
     'filters' => [
 
         'url' => 'home_url',
-        'us_phone' => 'phone_format_us',
-        'phone_link' => 'phone_link',
+        'us_phone' => [Phone::class, 'formatUs'],
+        'phone_link' => [Phone::class, 'getPhoneLink'],
     ],
 
     /*

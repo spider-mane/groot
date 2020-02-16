@@ -3,8 +3,8 @@
 return [
 
     'developer' => [
-        'name' => '',
-        'agency' => '',
-        'url' => '',
+        'name' => 'Chris Williams',
+        'agency' => 'WebTheory::studio()',
+        'url' => 'https://www.webtheorystudio.com',
     ]
 ];

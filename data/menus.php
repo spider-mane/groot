@@ -9,8 +9,6 @@
 return [
 
     'site' => [
-        'services' => 'Services',
-        'portfolio' => 'Work',
         'about' => 'About',
         'contact' => 'Contact',
         'blog' => 'Blog',

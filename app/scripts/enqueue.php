@@ -1,7 +1,6 @@
 <?php
 
-use App\Facades\Config;
-use Theme\Models\Asset;
+use Theme\Asset;
 
 /**
  *
@@ -13,7 +12,7 @@ add_action('wp_enqueue_scripts', function () {
     /**
      * versions
      */
-    $themeVersion = '1.0.2';
+    $themeVersion = '1.0.0';
     $fontAwesomeVer = '5.9.0';
 
     /**
@@ -43,11 +42,11 @@ add_action('wp_enqueue_scripts', function () {
      */
     if (is_page('contact')) {
 
-        $key = Config::get('services.google.maps.key');
+        $key = '';
         $callback = 'initMap';
         $query = "key={$key}&callback={$callback}";
 
-        // wp_enqueue_script('google/maps', "//maps.googleapis.com/maps/api/js?{$query}", null, null, false);
+        wp_enqueue_script('google/maps', "//maps.googleapis.com/maps/api/js?{$query}", null, null, false);
     }
 
     /**
@@ -55,18 +54,18 @@ add_action('wp_enqueue_scripts', function () {
      */
     if (is_page('contact')) {
 
-        $key = Config::get('services.reCaptcha.key');
+        $key = '';
 
         wp_enqueue_script('reCapcha', "//www.google.com/recaptcha/api.js?render={$key}", null, null, false);
     }
 
     /**
-     * project styles
+     * theme styles
      */
     wp_enqueue_style('webtheory-css--main', Asset::stylesheet('styles'), null, deversion($themeVersion), null);
 
     /**
-     * project scripts
+     * theme scripts
      */
     wp_enqueue_script('webtheory-js--main', Asset::script('script'), null, deversion($themeVersion), true);
 });

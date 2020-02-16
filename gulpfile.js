@@ -42,7 +42,7 @@ const prod = environments.production;
 // Base
 const env = prod() ? 'production' : 'development';
 const projectURL = 'http://webtheorystudio.test';
-const publicDir = './public/';
+const publicDir = './theme/';
 const assets = publicDir + 'assets/';
 const assetSrc = assets + 'src/';
 const assetDist = assets + 'dist/';

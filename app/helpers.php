@@ -15,11 +15,11 @@ use WebTheory\Voltaire\Theme;
  * @param Theme $container
  * @return Theme|mixed
  */
-function theme($make = null, $parameters = [])
+function theme($get = null)
 {
     $container = Theme::getInstance();
 
-    return isset($make) ? $container->make($make, $parameters) : $container;
+    return isset($get) ? $container->get($get) : $container;
 }
 
 /**
@@ -63,4 +63,9 @@ function get_view_slug()
     }
 
     return $slug;
+}
+
+function deversion($version)
+{
+    return $version;
 }

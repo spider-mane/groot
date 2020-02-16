@@ -9,6 +9,22 @@ class Entity
     /**
      *
      */
+    public static function all()
+    {
+        return [
+            'short_title' => static::title('short'),
+            'full_title' => static::title('full'),
+            'styled_title' => static::title('styled'),
+            'phone' => static::contactInfo('phone'),
+            'email' => static::contactInfo('email'),
+            'address' => static::address(),
+            'social_media' => static::socialMedia(),
+        ];
+    }
+
+    /**
+     *
+     */
     public static function owner()
     {
         return ThemeData::get('entity.owner');
@@ -29,15 +45,19 @@ class Entity
      */
     public static function address(?string $component = null)
     {
+        $format = ThemeData::get('entity.option_key_formats.address');
+
         if ($component) {
-            return ThemeData::get("entity.address.{$component}");
+            $default =  ThemeData::get("entity.address.{$component}");
+
+            return get_option(sprintf($format, $component, $default));
         }
 
         return [
-            'street' => ThemeData::get('entity.address.street', null),
-            'city' => ThemeData::get('entity.address.city', null),
-            'state' => ThemeData::get('entity.address.state', null),
-            'zip' => ThemeData::get('entity.address.zip', null),
+            'street' => static::address('street'),
+            'city' => static::address('city'),
+            'state' => static::address('state'),
+            'zip' => static::address('zip'),
         ];
     }
 
@@ -62,21 +82,5 @@ class Entity
     public static function socialMedia()
     {
         return SocialMedia::getAccounts();
-    }
-
-    /**
-     *
-     */
-    public static function all()
-    {
-        return [
-            'short_title' => static::title('short'),
-            'full_title' => static::title('full'),
-            'styled_title' => static::title('styled'),
-            'phone' => static::contactInfo('phone'),
-            'email' => static::contactInfo('email'),
-            'address' => static::address(),
-            'social_media' => static::socialMedia(),
-        ];
     }
 }
