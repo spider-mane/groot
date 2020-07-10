@@ -20,6 +20,16 @@ class Testimonial
     ];
 
     /**
+     *
+     */
+    public const YELP_MAP = [
+        'name' => '',
+        'photo' => '',
+        'rating' => '',
+        'text' => '',
+    ];
+
+    /**
      * extract data to be anticipated by template
      */
     protected static function getReviewData(string $source, array $sourceMap, array $reviewData)
@@ -65,7 +75,11 @@ class Testimonial
         $google = json_decode(file_get_contents($uri), true);
 
         if ('OK' == $google['status']) {
-            $reviews = static::getReviewData('Google Places', static::PLACES_MAP, $google['result']['reviews']);
+            $reviews = static::getReviewData(
+                'Google Places',
+                static::PLACES_MAP,
+                $google['result']['reviews']
+            );
         }
 
         return $reviews ?? [];
@@ -74,7 +88,7 @@ class Testimonial
     /**
      *
      */
-    public function all()
+    public function yelp()
     {
         //
     }

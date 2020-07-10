@@ -24,6 +24,16 @@ return [
         'email' => 'name@email.com',
     ],
 
+    'reviews' => [
+        'google' => [
+            'business_name' => ''
+        ],
+
+        'yelp' => [
+            'business_name' => ''
+        ]
+    ],
+
     'fonts' => [
         'primary' => null
     ],

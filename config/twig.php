@@ -83,5 +83,13 @@ return [
         'edump' => function (...$value) {
             exit(var_dump(...$value));
         },
-    ]
+    ],
+
+    'globals' => [],
+
+    'tests' => [],
+
+    'components' => [],
+
+    'extensions' => [],
 ];
