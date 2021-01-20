@@ -68,7 +68,7 @@
     "core-js": "^3.3.2",
     "delete-empty": "^3.0.0",
     "flag-icon-css": "^3.4.2",
-    "gsap": "^2.1.3",
+    "gsap": "^3.6.0",
     "gulp-gzip": "^1.4.2",
     "gulp-newer": "^1.4.0",
     "hammerjs": "^2.0.8",
