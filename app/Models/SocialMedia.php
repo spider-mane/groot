@@ -28,7 +28,7 @@ class SocialMedia
         $socialMedia = static::$contextView;
 
         if (empty($context)) {
-            return $socialMedia->getitems();
+            return $socialMedia->getItems();
         }
 
         return $socialMedia->getContextItems($context);

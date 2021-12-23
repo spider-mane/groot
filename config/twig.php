@@ -40,48 +40,34 @@ return [
         'logo' => [Asset::class, 'logo'],
         'icon' => [Asset::class, 'icon'],
 
-        /**
-         *
-         */
         'lorem' => function (int $count, string $what = 'words', bool $tags = false) {
             return (new LoremIpsum)->$what($count, $tags, false);
         },
 
-        /**
-         *
-         */
-        'spaces' => function ($spaces) {
+        'spaces' => function (int $spaces) {
             return str_repeat('&nbsp;', $spaces);
         },
 
-        /**
-         *
-         */
-        'separator' => function ($spaces) {
+        'separator' => function (int $spaces) {
             $spaces = str_repeat('&nbsp;', $spaces);
 
             return $spaces . '|' . $spaces;
         },
 
-        /**
-         *
-         */
         'class' => function () {
-            return new Classlist;
+            return new Classlist();
         },
 
-        /**
-         *
-         */
         'field' => function (string $type, array $args) {
             return (new FormFieldFactory)->create($type, $args);
         },
 
-        /**
-         *
-         */
-        'edump' => function (...$value) {
-            exit(var_dump(...$value));
+        'dump' => function (...$values) {
+            function_exists('dump') ? dump(...$values) : var_dump(...$values);
+        },
+
+        'dd' => function (...$values) {
+            function_exists('dd') ? dd(...$values) : exit(var_dump(...$values));
         },
     ],
 

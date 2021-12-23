@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Menus used througout theme. Can either be Wordpress menu object or hardcoded.
- * If hardcoded, use structure identical to Wordpress menu object for easy
- * interchangeability
+ * Menus used throughout theme. Can either be Wordpress menu object or
+ * hardcoded.  If hardcoded, use structure identical to Wordpress menu object
+ * for easy interchangeability
  */
 
 return [
